@@ -93,8 +93,4 @@ export const changeLikeStatus = async (cardId) => {
   } catch (error) {
     return Promise.reject(error.message);
   }
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> f73b56d94ce9b62d6bd80dba12d8843950f8d0cc
