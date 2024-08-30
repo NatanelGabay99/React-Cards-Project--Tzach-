@@ -147,8 +147,4 @@ const CardForm = ({
   );
 };
 
-<<<<<<< HEAD
 export default React.memo(CardForm);
-=======
-export default React.memo(CardForm);
->>>>>>> f73b56d94ce9b62d6bd80dba12d8843950f8d0cc
