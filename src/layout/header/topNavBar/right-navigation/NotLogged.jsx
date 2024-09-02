@@ -1,7 +1,7 @@
 import React from "react";
-import NavBarItem from "../../../routes/components/NavBarItem";
+import NavBarItem from "../../../../routes/components/NavBarItem";
 import { Box } from "@mui/material";
-import ROUTES from "../../../routes/routesModel";
+import ROUTES from "../../../../routes/routesModel";
 
 export default function NotLogged() {
   return (

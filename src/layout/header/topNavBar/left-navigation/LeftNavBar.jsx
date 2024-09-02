@@ -4,7 +4,7 @@ import NavItem from "../../../../routes/components/NavItem";
 import { useUser } from "../../../../users/providers/UserProvider";
 import Logo from "../logo/Logo";
 import LogoIcon from "../logo/LogoIcon";
-import ROUTES from "../../../routes/routesModel";
+import ROUTES from "../../../../routes/routesModel";
 
 export default function LeftNavBar() {
   const { user } = useUser();
