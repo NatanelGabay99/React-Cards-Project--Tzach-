@@ -6,9 +6,9 @@ import useCards from "../hooks/useCards";
 import useForm from "../../forms/hooks/useForm";
 import CardComponent from "../components/card/CardComponent";
 import cardSchema from "../models/cardSchema";
-import initialCardForm from "../helpers/initalForms/initialCardForm";
 import mapCardToModel from "../../users/helpers/normalization/mapCardToModel";
 import normalizeCard from "../../users/helpers/normalization/normalizeCard";
+import initialCardForm from "../helpers/initialForms/initialCardForm";
 
 export default function EditCardPage() {
   const { id } = useParams();
