@@ -1,17 +1,31 @@
-import React from "react";
 import { Box } from "@mui/material";
-import ROUTES from "../../../routes/routesModel";
-import LogoIcon from "../logo/LogoIcon";
+import React from "react";
+import NavItem from "../../../../routes/components/NavItem";
+import { useUser } from "../../../../users/providers/UserProvider";
 import Logo from "../logo/Logo";
-import NavBarItem from "../../../routes/components/NavBarItem";
+import LogoIcon from "../logo/LogoIcon";
+import ROUTES from "../../../routes/routesModel";
+
 export default function LeftNavBar() {
+  const { user } = useUser();
+  console.log(user);
+
   return (
     <Box>
       <LogoIcon />
-      <Logo />
-      <NavBarItem to={ROUTES.CARDS} label={"Cards"} />
-      <NavBarItem to={ROUTES.ABOUT} label={"About"} />
-      <NavBarItem to={ROUTES.SANDBOX} label={"Sandbox"} />
+
+      <Box
+        sx={{
+          display: { xs: "none", md: "inline-flex" },
+        }}
+      >
+        <Logo />
+        <NavItem to={ROUTES.CARDS} label="Cards" />
+        <NavItem to={ROUTES.ABOUT} label="About" />
+        {user && <NavItem to={ROUTES.FAV_CARDS} label="Favorite cards" />}
+        {user?.isBusiness && <NavItem to={ROUTES.MY_CARDS} label="My cards" />}
+        {user?.isAdmin && <NavItem to={ROUTES.SANDBOX} label="Sandbox" />}
+      </Box>
     </Box>
   );
 }
