@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import useForm from "../../forms/hooks/useForm";
 import ROUTES from "../../routes/routesModel";
@@ -8,7 +8,7 @@ import CardForm from "../components/CardForm";
 import initialCardForm from "../helpers/initialForms/initialCardForm";
 import normalizeCard from "../helpers/normalization/normalizeCard";
 import useCards from "../hooks/useCards";
-import cardSchema from "../models/joi-schema/cardSchema";
+import cardSchema from "../models/cardSchema";
 
 export default function AddCardPage() {
   const { handleCreateCard } = useCards();
@@ -28,6 +28,9 @@ export default function AddCardPage() {
     }
   );
   //useEffect - update the form data to this card data
+    useEffect(() => {
+        setData(initialCardForm);
+    }, [setData]);
 
   if (!user) return <Navigate replace to={ROUTES.CARDS} />;
 

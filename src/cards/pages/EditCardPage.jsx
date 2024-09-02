@@ -1,66 +1,69 @@
 import { Container } from "@mui/material";
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import CardForm from "../components/CardForm";
-import useCards from "../hooks/useCards";
+import { Navigate, useParams } from "react-router-dom";
 import useForm from "../../forms/hooks/useForm";
-import CardComponent from "../components/card/CardComponent";
-import cardSchema from "../models/cardSchema";
-import mapCardToModel from "../../users/helpers/normalization/mapCardToModel";
-import normalizeCard from "../../users/helpers/normalization/normalizeCard";
+import ROUTES from "../../routes/routesModel";
+import { useUser } from "../../users/providers/UserProvider";
+import CardForm from "../components/CardForm";
 import initialCardForm from "../helpers/initialForms/initialCardForm";
+import mapCardToModel from "../helpers/normalization/mapToModel";
+import normalizeCard from "../helpers/normalization/normalizeCard";
+import useCards from "../hooks/useCards";
+import cardSchema from "../models/joi-schema/cardSchema";
 
 export default function EditCardPage() {
+  //what do we need in this page
+  //id of the card - useParams
   const { id } = useParams();
-  const { handleUpdateCard, getCardById, card } = useCards();  console.log(cardSchema);
+  //handleUpdateCard & handleGetCard & card - useCards
   const {
-    data,
-    errors,
-    setData,
-    handleChange,
-    handleReset,
-    validateForm,
-    onSubmit,
-  } = useForm(initialCardForm, cardSchema, (data) =>
-    handleUpdateCard(id, data)
-  );
+    handleUpdateCard,
+    handleGetCard,
+    value: { card },
+  } = useCards();
 
-  useEffect(() => {
-    if (card) {
-      setData(mapCardToModel(card));
-    } else {
-      getCardById(id);
+  //user - useUser (provider)
+  const { user } = useUser();
+  //useForm (initialForm,schema,onSubmit)
+  const { value, setData, ...rest } = useForm(
+    initialCardForm,
+    cardSchema,
+    () => {
+      handleUpdateCard(card._id, {
+        ...normalizeCard({ ...value.data }),
+        bizNumber: card.bizNumber,
+        user_id: card.user_id,
+      });
     }
-  }, [card]);
+  );
+  //useEffect - update the form data to this card data
+  useEffect(() => {
+    handleGetCard(id).then((data) => {
+      const modelCard = mapCardToModel(data);
+      setData(modelCard);
+    });
+  }, [handleGetCard, setData, id]);
+
+  if (!user) return <Navigate replace to={ROUTES.CARDS} />;
 
   return (
-    <div>
-      <Container
-        sx={{
-          paddingTop: 8,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <CardForm
-          title="edit card"
-          onSubmit={onSubmit}
-          onReset={handleReset}
-          errors={errors}
-          validateForm={validateForm}
-          onInputChange={handleChange}
-          data={data}
-        />
-        {card && (
-          <CardComponent
-            card={{ _id: id, ...normalizeCard(data) }}
-            handleDelete={() => {}}
-            handleEdit={() => {}}
-            handleLike={() => {}}
-          />
-        )}
-      </Container>
-    </div>
+    <Container
+      sx={{
+        paddingTop: 8,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <CardForm
+        title="edit card"
+        onSubmit={rest.onSubmit}
+        onReset={rest.handleReset}
+        errors={value.errors}
+        onFormChange={rest.validateForm}
+        onInputChange={rest.handleChange}
+        data={value.data}
+      />
+    </Container>
   );
 }

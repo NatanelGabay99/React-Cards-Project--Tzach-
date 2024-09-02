@@ -1,32 +1,40 @@
-import React, { useEffect, useState } from "react";
+import { Container } from "@mui/material";
+import React, { useEffect } from "react";
 import PageHeader from "../../components/PageHeader";
-import Cards from "../components/Cards";
-import axios from "axios";
-import CardsFeedback from "../components/CardsFeedback";
-import { useSnack } from "../../providers/SnackbarProvider";
+
 import useCards from "../hooks/useCards";
+import CardsFeedback from "../components/CardsFeedback";
+import AddNewCardButton from "../components/card/AddNewCardButton";
 
 export default function CardsPage() {
-  const { cards, error, isLoading, getAllCards, handleDelete, handleLike } =
+  const { value, handleGetCards, handleDeleteCard, handleLikeCard } =
     useCards();
+  const { filterCards, error, isLoading } = value;
 
   useEffect(() => {
-    getAllCards();
-  }, []);
+    handleGetCards();
+  }, [handleGetCards]);
 
+  const handleDelete = async (id) => {
+    await handleDeleteCard(id);
+    handleGetCards();
+  };
   return (
     <div>
-      <PageHeader
-        title="Cards"
-        subtitle="On this page you can find all bussines cards from all categories"
-      />
-      <CardsFeedback
-        cards={cards}
-        isLoading={isLoading}
-        error={error}
-        handleDelete={handleDelete}
-        handleLike={handleLike}
-      />
+      <Container sx={{ mt: 2 }}>
+        <PageHeader
+          title="Cards"
+          subtitle="On this page you can find all bussines cards from all categories"
+        />
+        <CardsFeedback
+          isLoading={isLoading}
+          error={error}
+          cards={filterCards}
+          handleDelete={handleDelete}
+          handleLike={handleLikeCard}
+        />
+        <AddNewCardButton />
+      </Container>
     </div>
   );
 }
