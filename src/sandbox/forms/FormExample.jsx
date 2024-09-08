@@ -1,57 +1,55 @@
-import { Button, Container, TextField } from "@mui/material";
-import Joi from "joi";
-import React, { useCallback, useState } from "react";
-import useForm from "../../forms/hooks/useForm";
+import React from "react";
+import Container from "@mui/material/Container";
 import Form from "../../forms/components/Form";
+import useForm from "../../forms/hooks/useForm";
+import Joi from "joi";
 import Input from "../../forms/components/Input";
-
-const initialForm = {
-  firstName: "",
-  lastName: "",
-};
-
-const schema = {
-  firstName: Joi.string().min(2),
-  lastName: Joi.string().min(2).max(12),
-};
-const printSomething = (something) => {
-  console.log(something);
-};
+import ROUTES from "../../routes/routesModel";
 
 export default function FormExample() {
-  const { data, errors, handleChange, validateForm, onSubmit, handleReset } =
-    useForm(initialForm, schema, printSomething);
+  const INITIAL_FORM = {
+    first: "",
+    last: "",
+  };
+
+  const schema = {
+    first: Joi.string().min(2).required(),
+    last: Joi.string().min(2).max(7).required(),
+  };
+  const handleSubmit = (data) => console.log(data);
+
+  const { value, ...rest } = useForm(INITIAL_FORM, schema, handleSubmit);
 
   return (
     <Container
       sx={{
-        pt: 8,
+        mt: 8,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
       }}
     >
       <Form
-        title="Example form"
-        onSubmit={onSubmit}
-        onReset={handleReset}
+        title="Test Form"
+        onSubmit={rest.onSubmit}
+        onReset={rest.handleReset}
         styles={{ maxWidth: "450px" }}
-        validateForm={validateForm}
+        onChange={rest.validateForm}
+        to={ROUTES.SANDBOX}
       >
         <Input
           label="first name"
-          name="firstName"
-          data={data}
-          error={errors.firstName}
-          onChange={handleChange}
+          name="first"
+          data={value.data}
+          error={value.errors.first}
+          onChange={rest.handleChange}
         />
-
         <Input
           label="last name"
-          name="lastName"
-          data={data}
-          error={errors.lastName}
-          onChange={handleChange}
+          name="last"
+          data={value.data}
+          error={value.errors.last}
+          onChange={rest.handleChange}
         />
       </Form>
     </Container>
