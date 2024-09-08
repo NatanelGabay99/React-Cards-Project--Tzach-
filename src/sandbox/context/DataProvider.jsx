@@ -5,9 +5,8 @@ const MyContext = createContext();
 export default function DataProvider({ children }) {
   const data = {
     data1: 100,
-    data2: "something",
+    data2: 200,
   };
-
   return <MyContext.Provider value={data}>{children}</MyContext.Provider>;
 }
 

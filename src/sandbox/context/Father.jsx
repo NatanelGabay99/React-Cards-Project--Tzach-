@@ -1,12 +1,11 @@
-import React from "react";
-import Parent from "./Parent";
+import Child from "./Child";
 import DataProvider from "./DataProvider";
 
-export default function GrandParent() {
+export default function Father() {
   return (
     <div>
       <DataProvider>
-        <Parent />
+        <Child />
       </DataProvider>
     </div>
   );
