@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import React from "react";
-import { useTheme } from "../../providers/CustomThemeProvider";
+import { useTheme } from "../../providers/ThemeProvider";
 
 export default function Main({ children }) {
   const { isDark } = useTheme();
@@ -17,3 +17,4 @@ export default function Main({ children }) {
     </>
   );
 }
+
