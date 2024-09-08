@@ -1,16 +1,43 @@
-import { Button } from "@mui/material";
-import MyButton from "./propsAndChildren/MyButton";
-import MyMessage from "./propsAndChildren/MyMessage";
-import Counter from "./states/Counter";
-import Countries from "./effects/Countries";
-import GrandParent from "./context/GrandParent";
-import Timer from "./effects/Timer";
-import FormExample from "./forms/FormExample";
+import { AppBar, Container, Toolbar } from "@mui/material";
+import { Outlet } from "react-router-dom";
+import NavItem from "../routes/components/NavItem";
 
-export default function SandboxPage() {
+export default function SandBoxPage() {
+  //   const user = {};
+  //   user.isAdmin = true;
+  //   if (!user || !user.isAdmin) return <Navigate replace to={ROUTES.CARDS} />;
   return (
     <div>
-      <FormExample />
+      <AppBar position="sticky" color="transparent">
+        <Toolbar>
+          <NavItem to="counter" label="Counter Page" sx={{ color: "black" }} />
+          <NavItem
+            to="mydetails"
+            label="My Details Page"
+            sx={{ color: "black" }}
+          />
+          <NavItem
+            to="password"
+            label="Password Page"
+            sx={{ color: "black" }}
+          />
+          <NavItem to="todo" label="Todo Page" sx={{ color: "black" }} />
+          <NavItem
+            to="firsteffect"
+            label="First Effect Page"
+            sx={{ color: "black" }}
+          />
+          <NavItem
+            to="countries"
+            label="Coutries Page"
+            sx={{ color: "black" }}
+          />
+          <NavItem to="render" label="Render" sx={{ color: "black" }} />
+        </Toolbar>
+      </AppBar>
+      <Container>
+        <Outlet />
+      </Container>
     </div>
   );
 }
