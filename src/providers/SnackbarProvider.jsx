@@ -1,9 +1,6 @@
 import { Alert, Snackbar } from "@mui/material";
 import React from "react";
-import { useContext } from "react";
-import { useCallback } from "react";
-import { useState } from "react";
-import { createContext } from "react";
+import { useContext, useCallback, useState, createContext  } from "react";
 
 const SnackbarContext = createContext();
 
@@ -22,9 +19,6 @@ export default function SnackbarProvider({ children }) {
 
   return (
     <>
-      <SnackbarContext.Provider value={setSnack}>
-        {children}
-      </SnackbarContext.Provider>
 
       <Snackbar
         anchorOrigin={{ vertical: "top", horizontal: "right" }}
@@ -38,6 +32,9 @@ export default function SnackbarProvider({ children }) {
           {snackMessage}
         </Alert>
       </Snackbar>
+      <SnackbarContext.Provider value={setSnack}>
+        {children}
+      </SnackbarContext.Provider>
     </>
   );
 }

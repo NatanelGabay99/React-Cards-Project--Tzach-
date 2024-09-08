@@ -1,5 +1,5 @@
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import React, { createContext, useCallback, useContext, useState } from "react";
+import React, { createContext, useCallback, useContext, useMemo, useState } from "react";
 
 const ThemeContext = createContext();
 
@@ -16,9 +16,14 @@ export default function CustomThemeProvider({ children }) {
     },
   });
 
+  const value = useMemo(
+    () => ({ isDark, toggleDarkMode }),
+    [isDark, toggleDarkMode]
+  );
+
   return (
     <ThemeProvider theme={theme}>
-      <ThemeContext.Provider value={{ isDark, toggleDarkMode }}>
+      <ThemeContext.Provider value={value}>
         {children}
       </ThemeContext.Provider>
     </ThemeProvider>
