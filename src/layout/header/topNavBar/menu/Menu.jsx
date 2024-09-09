@@ -2,12 +2,12 @@ import MuiMenu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Box from "@mui/material/Box";
 import ROUTES from "../../../../routes/routesModel";
-import { useUser } from "../../../../users/providers/UserProvider";
+import { useCurrentUser } from "../../../../users/providers/UserProvider";
 import useUsers from "../../../../users/hooks/useUsers";
 import MenuLink from "../../../../routes/components/MenuLink";
 
 const Menu = ({ isOpen, anchorEl, onClose }) => {
-  const { user } = useUser();
+  const { user } = useCurrentUser();
   const { handleLogout } = useUsers();
 
   const onLogout = () => {

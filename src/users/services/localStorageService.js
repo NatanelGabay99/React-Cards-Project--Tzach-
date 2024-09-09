@@ -1,5 +1,5 @@
 import { jwtDecode } from "jwt-decode";
-const TOKEN = process.env.REACT_APP_TOKEN;
+const TOKEN = import.meta.env.VITE_TOKEN;
 
 export const setTokenInLocalStorage = (encryptedToken) =>
   localStorage.setItem(TOKEN, encryptedToken);
