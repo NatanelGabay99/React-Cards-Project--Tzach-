@@ -1,9 +1,11 @@
 import { AppBar, Toolbar } from "@mui/material";
 import React from "react";
 import LeftNavBar from "./left-navigation/LeftNavBar";
+import RightNavBar from "./right-navigation/RightNavbar";
+
+
 
 import { MenuProvider } from "./menu/MenuProvider";
-import RightNavBar from "./right-navigation/RightNavBar";
 
 export default function NavBar() {
   return (

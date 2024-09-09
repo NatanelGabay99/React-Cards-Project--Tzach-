@@ -10,7 +10,7 @@ import {
   getCard,
   getCards,
   getMyCards,
-} from "../services/cardApiService";
+} from "../services/cardsApiService";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import ROUTES from "../../routes/routesModel";
 
