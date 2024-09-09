@@ -1,21 +1,22 @@
-import { jwtDecode } from "jwt-decode";
+import JwtDecode from "jwt-decode";
+const TOKEN = process.env.REACT_APP_TOKEN;
 
-const TOKEN = "my token";
+export const setTokenInLocalStorage = (encryptedToken) =>
+  localStorage.setItem(TOKEN, encryptedToken);
 
-// The setItem() will update the token in the localStorage, and if there isn't a token, then setItem() will create one.
-export const setTokenInLocalStorage = (jwtToken) => {
-  localStorage.setItem(TOKEN, jwtToken);
+export const getUser = () => {
+  try {
+    const user = localStorage.getItem(TOKEN);
+    const userDetails = JwtDecode(user);
+    userDetails.isBusiness = userDetails.isBusiness === "true";
+    userDetails.isAdmin = userDetails.isAdmin === "true";
+
+    return JwtDecode(user);
+  } catch (error) {
+    return null;
+  }
 };
 
 export const removeToken = () => localStorage.removeItem(TOKEN);
 
 export const getToken = () => localStorage.getItem(TOKEN);
-
-export const getUser = () => {
-  try {
-    const myToken = getToken();
-    return jwtDecode(myToken);
-  } catch (err) {
-    return null;
-  }
-};
