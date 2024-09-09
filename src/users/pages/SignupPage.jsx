@@ -1,18 +1,16 @@
-import React from "react";
 import { Navigate } from "react-router-dom";
 import ROUTES from "../../routes/routesModel";
 import { useCurrentUser } from "../providers/UserProvider";
 import useForm from "../../forms/hooks/useForm";
 import initialSignupForm from "../helpers/initialForms/initialSignupForm";
-import signupSchema from "../models/signupSchema";
+import signupSchema from "../models/joi-schema/signupSchema";
 import { Container } from "@mui/material";
 import SignupForm from "../components/SignupForm";
+import useUsers from "../hooks/useUsers";
 
-const handleSignup = (userDetails) => {
-  console.log(userDetails);
-};
 
 export default function SignupPage() {
+  const { handleSignup } = useUsers();
   const {
     data,
     errors,
