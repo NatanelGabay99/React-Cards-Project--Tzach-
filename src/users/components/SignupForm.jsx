@@ -1,7 +1,8 @@
-import React from "react";
 import Form from "../../forms/components/Form";
 import Input from "../../forms/components/Input";
 import { Grid, FormControlLabel, Checkbox } from "@mui/material";
+import ROUTES from "../../routes/routesModel";
+
 
 export default function SignupForm({
   onSubmit,
@@ -20,6 +21,7 @@ export default function SignupForm({
       validateForm={validateForm}
       title={title}
       styles={{ maxWidth: "800px" }}
+      to={ROUTES.CARDS}
     >
       <Input
         name="first"
