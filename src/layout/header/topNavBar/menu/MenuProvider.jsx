@@ -6,9 +6,9 @@ import React, {
     createContext,
   } from "react";
   import Box from "@mui/material/Box";
-  import Menu from "./Menu";
   import { useMediaQuery } from "@mui/material";
   import { useTheme as useMuiTheme } from "@mui/material/styles";
+  import Menu from "./Menu";
   
   const MenuContext = createContext(null);
   
