@@ -1,10 +1,10 @@
-import { useTheme } from "../../../providers/CustomThemeProvider";
 import { Box, IconButton } from "@mui/material";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import { useCurrentUser } from "../../../users/providers/UserProvider";
+import { useCurrentUser } from "../../../../users/providers/UserProvider";
 import Logged from "./Logged";
 import NotLogged from "./NotLogged";
+import {useTheme} from "../../../../providers/CustomThemeProvider";
 
 export default function RightNavbar() {
   const { user } = useCurrentUser();

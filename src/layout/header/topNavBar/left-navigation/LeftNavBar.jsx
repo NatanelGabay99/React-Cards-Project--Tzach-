@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import React from "react";
-import NavItem from "../../../../routes/components/NavItem";
+import NavItem from "../../../../routes/components/NavBarItem";
 import { useUser } from "../../../../users/providers/UserProvider";
 import Logo from "../logo/Logo";
 import LogoIcon from "../logo/LogoIcon";

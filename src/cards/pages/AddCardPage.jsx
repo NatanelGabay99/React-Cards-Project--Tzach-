@@ -8,7 +8,7 @@ import CardForm from "../components/CardForm";
 import initialCardForm from "../helpers/initialForms/initialCardForm";
 import normalizeCard from "../helpers/normalization/normalizeCard";
 import useCards from "../hooks/useCards";
-import cardSchema from "../models/cardSchema";
+import cardSchema from "../models/joi-schema/cardSchema";
 
 export default function AddCardPage() {
   const { handleCreateCard } = useCards();
