@@ -1,6 +1,6 @@
 import { AppBar, Container, Toolbar } from "@mui/material";
 import { Outlet } from "react-router-dom";
-import NavItem from "../routes/components/NavItem";
+import NavItem from "../routes/components/NavBarItem";
 
 export default function SandBoxPage() {
   //   const user = {};
