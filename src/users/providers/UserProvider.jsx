@@ -9,7 +9,7 @@ import { getToken, getUser } from "../services/localStorageService";
 
 const UserContext = createContext();
 
-export default function UserProvider({ children }) {
+ export default function UserProvider({ children }){
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(getToken());
 
@@ -32,7 +32,8 @@ export default function UserProvider({ children }) {
   );
 }
 
-export const useCurrentUser = () => {
+ // eslint-disable-next-line react-refresh/only-export-components
+ export const useCurrentUser = () => {
   const context = useContext(UserContext);
   if (!context) {
     throw new Error("useCurrentUser must be used within provider");
@@ -40,3 +41,7 @@ export const useCurrentUser = () => {
 
   return context;
 };
+
+
+
+

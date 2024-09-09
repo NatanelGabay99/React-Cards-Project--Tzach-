@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useSnack } from "../providers/SnackbarProvider";
-import { useUser } from "./../users/providers/UserProvider";
+import { useCurrentUser } from "./../users/providers/UserProvider";
 
 
 export default function useAxios() {
   const snack = useSnack();
-  const { token } = useUser();
+  const { token } = useCurrentUser();
 
   useEffect(() => {
     axios.defaults.headers.common["Authorization"] = "Bearer " + token;

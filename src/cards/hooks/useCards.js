@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import useAxios from "../../hooks/useAxios";
 import { useSnack } from "../../providers/SnackbarProvider";
-import { useUser } from "../../users/providers/UserProvider";
+import { useCurrentUser } from "../../users/providers/UserProvider";
 import {
   changeLikeStatus,
   createCard,
@@ -24,7 +24,7 @@ export default function useCards() {
   const [searchParams] = useSearchParams();
   useAxios();
   const snack = useSnack();
-  const { user } = useUser();
+  const { user } = useCurrentUser();
   const navigate = useNavigate();
   useEffect(() => {
     setQuery(searchParams.get("q") ?? "");

@@ -1,22 +1,23 @@
-import JwtDecode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 const TOKEN = process.env.REACT_APP_TOKEN;
 
 export const setTokenInLocalStorage = (encryptedToken) =>
   localStorage.setItem(TOKEN, encryptedToken);
 
+export const removeToken = () => localStorage.removeItem(TOKEN);
+
+export const getToken = () => localStorage.getItem(TOKEN);
+
 export const getUser = () => {
   try {
     const user = localStorage.getItem(TOKEN);
-    const userDetails = JwtDecode(user);
+    const userDetails = jwtDecode(user);
     userDetails.isBusiness = userDetails.isBusiness === "true";
     userDetails.isAdmin = userDetails.isAdmin === "true";
 
-    return JwtDecode(user);
+    return jwtDecode(user);
   } catch (error) {
     return null;
   }
 };
 
-export const removeToken = () => localStorage.removeItem(TOKEN);
-
-export const getToken = () => localStorage.getItem(TOKEN);

@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PageHeader from "../../components/PageHeader";
 import ROUTES from "../../routes/routesModel";
-import { useUser } from "../../users/providers/UserProvider";
+import { useCurrentUser } from "../../users/providers/UserProvider";
 import CardsFeedback from "../components/CardsFeedback";
 import useCards from "../hooks/useCards";
 import AddNewCardButton from "../components/card/AddNewCardButton";
@@ -13,7 +13,7 @@ export default function MyCards() {
     useCards();
   const { filterCards, error, isLoading } = value;
 
-  const { user } = useUser();
+  const { user } = useCurrentUser();
   const navigate = useNavigate();
 
   useEffect(() => {

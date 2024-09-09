@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useUsers from "../hooks/useUsers";
-import { useUser } from "../providers/UserProvider";
+import { useCurrentUser } from "../providers/UserProvider";
 import { Container, Box, Typography, Avatar, Paper, Grid } from "@mui/material";
 import Spinner from "../../components/Spinner";
 import { Navigate } from "react-router-dom";
@@ -8,7 +8,7 @@ import ROUTES from "../../routes/routesModel";
 
 export default function Profile() {
   const { handleGetUser } = useUsers();
-  const { user } = useUser();
+  const { user } = useCurrentUser();
   const [userFullData, setUserFullData] = useState(null);
 
   useEffect(() => {
