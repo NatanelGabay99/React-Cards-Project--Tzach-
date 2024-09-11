@@ -18,7 +18,7 @@ export default function SBCardComponent() {
           <CardMedia
             component="img"
             height="140"
-            image="assets/images/examplePic.jpg"
+            image="/public/images/examplePic.jpg"
           />
           <CardContent>
             <Typography>Card Content</Typography>
