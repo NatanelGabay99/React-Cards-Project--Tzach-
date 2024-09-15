@@ -56,7 +56,7 @@ export default function AboutPage() {
         <Typography variant="body1" gutterBottom>
         <h2>How to use the application</h2>
         </Typography>
-
+        
         <Typography variant="body2" gutterBottom>
         <p>
           This application is a comprehensive card management system designed to
