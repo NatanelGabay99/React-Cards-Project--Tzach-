@@ -14,11 +14,12 @@ import useCards from "../hooks/useCards";
 import Error from "../../components/Error";
 
 export default function CardDetailsPage() {
-  const { card, isLoading, error, getCardById } = useCards();
+  const { value, handleGetCard } = useCards();
+  const { card, isLoading, error } = value;
   const { id } = useParams();
 
   useEffect(() => {
-    getCardById(id);
+    handleGetCard(id);
   }, [id]);
 
   if (isLoading) return <Spinner />;

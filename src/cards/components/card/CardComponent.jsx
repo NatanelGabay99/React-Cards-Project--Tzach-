@@ -6,6 +6,7 @@ import CardBody from "./CardBody";
 import CardActionBar from "./CardActionBar";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../../../routes/routesModel";
+import { useCurrentUser } from "../../../users/providers/UserProvider";
 
 export default function CardComponent({
   card,
@@ -14,6 +15,7 @@ export default function CardComponent({
   handleLike,
 }) {
   const navigate = useNavigate();
+  const user = useCurrentUser();
   return (
     <Card sx={{ width: 250, m: 2 }}>
       <CardActionArea
@@ -34,7 +36,9 @@ export default function CardComponent({
       </CardActionArea>
       <CardActionBar
        likes={card.likes}
-        cardId={card._id}
+        id={card._id}
+        user_id={user._id}
+        phone={card.phone}
         handleDelete={handleDelete}
         handleLike={handleLike}
         handleEdit={handleEdit}

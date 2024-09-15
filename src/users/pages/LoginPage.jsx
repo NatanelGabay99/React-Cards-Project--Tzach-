@@ -55,17 +55,17 @@ export default function LoginPage() {
             name="email"
             type="email"
             //this is the error, onChange, and data for the input
-            error={value.email}
+            error={errors.email}
             onChange={handleChange}
-            data={value}
+            data={data}
           />
           <Input
             label="password"
             name="password"
             type="password"
-            error={value.password}
+            error={errors.password}
             onChange={handleChange}
-            data={value}
+            data={data}
           />
           <Grid item xs={12}>
             <Button

@@ -16,7 +16,7 @@ import ROUTES from "../../routes/routesModel";
 
 export default function useCards() {
   const [cards, setCards] = useState([]);
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [card, setCard] = useState(null);
   const [filterCards, setFilterCards] = useState(null);
@@ -124,7 +124,7 @@ export default function useCards() {
     try {
       setLoading(true);
       const cards = await getCards();
-      const favCards = cards.filter((card) => card.likes.includes(user.id));
+      const favCards = cards.filter((card) => card.likes.includes(user._id));
       requestStatus(false, null, favCards);
     } catch (error) {
       requestStatus(false, error, null);
