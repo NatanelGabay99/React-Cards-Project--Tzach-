@@ -35,7 +35,7 @@ export default function AboutPage() {
           md={4}
           sx={{ display: { md: "flex", xs: "none" }, justifyContent: "center" }}
         >
-          <img src="/public/images/card.png" alt="card" width="100%" />
+          <img src="/images/card.png" alt="card" width="100%" />
         </Grid>
       </Grid>
     </Container>

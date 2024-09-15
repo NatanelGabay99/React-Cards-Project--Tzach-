@@ -14,11 +14,13 @@ import useUsers from "../hooks/useUsers";
 export default function LoginPage() {
   //this pulls the isLoading, error, and handleLogin from the useUsers hook
   // useUsers is called because it is a custom hook that is used to handle the login
+
   const { isLoading, error, handleLogin } = useUsers();
 
  // this pulls the data, errors, handleChange, handleReset, validateForm, and onSubmit from the useForm hook, and then useForm is called with the initialLoginForm, loginSchema, and handleLogin
-  const { data, errors, handleChange, handleReset, validateForm, onSubmit } =
+  const { value, handleChange, handleReset, validateForm, onSubmit } =
     useForm(initialLoginForm, loginSchema, handleLogin);
+    const { data, errors } = value;
 
   const { user } = useCurrentUser();
 
@@ -53,17 +55,17 @@ export default function LoginPage() {
             name="email"
             type="email"
             //this is the error, onChange, and data for the input
-            error={errors.email}
+            error={value.email}
             onChange={handleChange}
-            data={data}
+            data={value}
           />
           <Input
             label="password"
             name="password"
             type="password"
-            error={errors.password}
+            error={value.password}
             onChange={handleChange}
-            data={data}
+            data={value}
           />
           <Grid item xs={12}>
             <Button

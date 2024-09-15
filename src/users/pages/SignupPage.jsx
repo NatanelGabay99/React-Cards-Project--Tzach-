@@ -12,14 +12,14 @@ import useUsers from "../hooks/useUsers";
 export default function SignupPage() {
   const { handleSignup } = useUsers();
   const {
-    data,
-    errors,
+    value,
     handleChange,
     handleReset,
     validateForm,
     onSubmit,
     handleChangeCheckBox,
   } = useForm(initialSignupForm, signupSchema, handleSignup);
+  const { data, errors } = value;
 
   const { user } = useCurrentUser();
 

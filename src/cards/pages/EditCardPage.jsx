@@ -25,7 +25,11 @@ export default function EditCardPage() {
   //user - useUser (provider)
   const { user } = useCurrentUser();
   //useForm (initialForm,schema,onSubmit)
-  const { value, setData, ...rest } = useForm(
+  const { 
+    value, 
+    setData, 
+    ...rest
+    } = useForm(
     initialCardForm,
     cardSchema,
     () => {
@@ -36,6 +40,7 @@ export default function EditCardPage() {
       });
     }
   );
+  const { data, errors } = value;
   //useEffect - update the form data to this card data
   useEffect(() => {
     handleGetCard(id).then((data) => {

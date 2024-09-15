@@ -12,11 +12,14 @@ import cardSchema from "../models/joi-schema/cardSchema";
 
 export default function AddCardPage() {
   const { handleCreateCard } = useCards();
-
+  
   //user - useUser (provider)
   const { user } = useCurrentUser();
   //useForm (initialForm,schema,onSubmit)
-  const { value, setData, ...rest } = useForm(
+  const { value, 
+    setData, 
+    ...rest
+   } = useForm(
     initialCardForm,
     cardSchema,
     () => {
@@ -27,6 +30,8 @@ export default function AddCardPage() {
       });
     }
   );
+  const { data, errors } = value;
+  
   //useEffect - update the form data to this card data
     useEffect(() => {
         setData(initialCardForm);
