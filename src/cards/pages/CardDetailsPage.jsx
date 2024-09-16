@@ -12,8 +12,10 @@ import {
 import PageHeader from "../../components/PageHeader";
 import useCards from "../hooks/useCards";
 import Error from "../../components/Error";
+import { useTheme } from "../../providers/CustomThemeProvider";
 
 export default function CardDetailsPage() {
+  const { isDark } = useTheme();
   const { value, handleGetCard } = useCards();
   const { card, isLoading, error } = value;
   const { id } = useParams();
@@ -26,7 +28,7 @@ export default function CardDetailsPage() {
   if (error) return <Error errorMessage={error} />;
 
   return (
-    <Container sx={{ mt: 4 }}>
+    <Container sx={{ color: isDark? '#ffffff' : '#121212', mt: 4 }}>
       <PageHeader
         title="Card Details"
         subtitle="Here you can find detailed information about the card"

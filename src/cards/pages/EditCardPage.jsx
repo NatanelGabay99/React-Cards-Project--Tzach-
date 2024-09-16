@@ -61,11 +61,11 @@ export default function EditCardPage() {
       }}
     >
       <CardForm
-        title="edit card"
+        title="Edit Card"
         onSubmit={rest.onSubmit}
         onReset={rest.handleReset}
         errors={value.errors}
-        onFormChange={rest.validateForm}
+        validateForm={rest.validateForm}
         onInputChange={rest.handleChange}
         data={value.data}
       />
