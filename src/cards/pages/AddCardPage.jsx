@@ -26,7 +26,6 @@ export default function AddCardPage() {
       handleCreateCard({
         ...normalizeCard({ ...value.data }),
         user_id: user._id,
-        likes: [],
       });
     }
   );

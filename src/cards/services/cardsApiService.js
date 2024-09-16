@@ -45,9 +45,38 @@ export const createCard = async (card) => {
     const { data } = await axios.post(`${apiUrl}/cards`, card);
     return data;
   } catch (error) {
+    if (error.response) {
+      // שגיאה שהגיעה מהשרת, עם תגובה מלאה
+      console.error("Error response from server:");
+      console.error("Status Code:", error.response.status); // קוד סטטוס HTTP
+      console.error("Status Text:", error.response.statusText); // טקסט הסטטוס
+      console.error("Headers:", error.response.headers); // כותרות התגובה
+      console.error("Data:", error.response.data); // המידע שהשרת שלח
+      return Promise.reject(
+        `Error ${error.response.status}: ${error.response.statusText} - ${error.response.data}`
+      );
+    } else if (error.request) {
+      // השגיאה נגרמה מבקשה שנשלחה אך לא התקבלה תגובה
+      console.error("No response received from server:");
+      console.error("Request Data:", error.request);
+      return Promise.reject("No response received from server.");
+    } else {
+      // שגיאה שנגרמה בהגדרת הבקשה עצמה
+      console.error("Error setting up request:", error.message);
+      return Promise.reject(`Request setup error: ${error.message}`);
+    }
+  }
+};
+
+/* export const createCard = async (card) => {
+  try {
+    const { data } = await axios.post(`${apiUrl}/cards`, card);
+    return data;
+  } catch (error) {
     return Promise.reject(error.message);
   }
 };
+ */
 
 export const editCard = async (cardId, normalaizedCard) => {
   try {

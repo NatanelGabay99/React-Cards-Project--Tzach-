@@ -7,8 +7,10 @@ import { useCurrentUser } from "../../users/providers/UserProvider";
 import CardsFeedback from "../components/CardsFeedback";
 import useCards from "../hooks/useCards";
 import AddNewCardButton from "../components/card/AddNewCardButton";
+import { useTheme } from "../../providers/CustomThemeProvider";
 
 export default function FavoriteCards() {
+  const { isDark } = useTheme();
   const { value, handleGetFavCards, handleDeleteCard, handleLikeCard } =
     useCards();
   const { filterCards, error, isLoading } = value;
@@ -36,7 +38,7 @@ export default function FavoriteCards() {
 
   return (
     <div>
-      <Container sx={{ mt: 2 }}>
+      <Container sx={{color: isDark? '#ffffff' : '#121212', mt: 2 }}>
         <PageHeader
           title="Favorite Cards Page"
           subtitle="On this page you can view business cards you have liked"
