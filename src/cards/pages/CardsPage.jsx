@@ -6,6 +6,7 @@ import useCards from "../hooks/useCards";
 import CardsFeedback from "../components/CardsFeedback";
 import AddNewCardButton from "../components/card/AddNewCardButton";
 import { useCurrentUser } from "../../users/providers/UserProvider";
+import { useTheme } from "../../providers/CustomThemeProvider";
 
 export default function CardsPage() {
   const { value, handleGetCards, handleDeleteCard, handleLikeCard } =
@@ -14,6 +15,8 @@ export default function CardsPage() {
     console.log(user); 
 
   const { filterCards, error, isLoading } = value;
+
+  const { isDark } = useTheme();
 
   useEffect(() => {
     handleGetCards();
@@ -25,7 +28,7 @@ export default function CardsPage() {
   };
   return (
     <div>
-      <Container sx={{ mt: 2 }}>
+      <Container sx={{ color: isDark? '#ffffff' : '#121212',  mt: 2 }}>
         <PageHeader
           title="Cards"
           subtitle="On this page you can find all bussines cards from all categories"

@@ -21,6 +21,7 @@ export default function SignupPage() {
   } = useForm(initialSignupForm, signupSchema, handleSignup);
   const { data, errors } = value;
 
+
   const { user } = useCurrentUser();
 
   if (user) return <Navigate to={ROUTES.ROOT} replace />;
@@ -38,7 +39,7 @@ export default function SignupPage() {
         onSubmit={onSubmit}
         onReset={handleReset}
         validateForm={validateForm}
-        title={"register form"}
+        title={"Register Form"}
         errors={errors}
         data={data}
         onInputChange={handleChange}

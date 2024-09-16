@@ -48,7 +48,7 @@ export default function AddCardPage() {
       }}
     >
       <CardForm
-        title="add card"
+        title={"Add Card"}
         onSubmit={rest.onSubmit}
         onReset={rest.handleReset}
         errors={value.errors}

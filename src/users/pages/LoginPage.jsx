@@ -5,7 +5,6 @@ import useForm from "../../forms/hooks/useForm";
 import initialLoginForm from "../helpers/initialForms/initialLoginForm";
 import loginSchema from "../models/joi-schema/loginSchema";
 import { Button, Container, Grid } from "@mui/material";
-import PageHeader from "../../components/PageHeader";
 import Form from "../../forms/components/Form";
 import Input from "../../forms/components/Input";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
@@ -28,11 +27,6 @@ export default function LoginPage() {
 
   return (
     <Container>
-      <PageHeader
-      //this is the title and subtitle for the page
-        title="Welcome to Login page"
-        subtitle="here you can log in"
-      />
       <Container
         sx={{
           paddingTop: 8,
@@ -42,7 +36,7 @@ export default function LoginPage() {
         }}
       >
         <Form
-          title="login"
+          title="Login"
           styles={{ maxWidth: "450px" }}
           to={ROUTES.ROOT}
           //this is the onSubmit, onReset, and validateForm for the form
