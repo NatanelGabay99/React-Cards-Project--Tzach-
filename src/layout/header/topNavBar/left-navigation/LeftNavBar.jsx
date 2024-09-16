@@ -4,8 +4,10 @@ import { useCurrentUser } from "../../../../users/providers/UserProvider";
 import Logo from "../logo/Logo";
 import LogoIcon from "../logo/LogoIcon";
 import ROUTES from "../../../../routes/routesModel";
+import { useTheme } from "../../../../providers/CustomThemeProvider";
 
 export default function LeftNavBar() {
+  const { isDark } = useTheme();
   const { user } = useCurrentUser();
   console.log(user);
 
@@ -19,11 +21,11 @@ export default function LeftNavBar() {
         }}
       >
         <Logo />
-        <NavItem to={ROUTES.CARDS} label="Cards" />
-        <NavItem to={ROUTES.ABOUT} label="About" />
-        {user && <NavItem to={ROUTES.FAV_CARDS} label="Favorite cards" />}
-        {user?.isBusiness && <NavItem to={ROUTES.MY_CARDS} label="My cards" />}
-        {user?.isAdmin && <NavItem to={ROUTES.SANDBOX} label="Sandbox" />}
+        <NavItem to={ROUTES.CARDS} label="Cards" sx={{color: isDark? '#ffffff' : '#121212'}} />
+        <NavItem to={ROUTES.ABOUT} label="About"  sx={{color: isDark? '#ffffff' : '#121212'}}/>
+        {user && <NavItem to={ROUTES.FAV_CARDS} label="Favorite cards" sx={{color: isDark? '#ffffff' : '#121212'}}/>}
+        {user?.isBusiness && <NavItem to={ROUTES.MY_CARDS} label="My cards" sx={{color: isDark? '#ffffff' : '#121212'}} />}
+        {user?.isAdmin && <NavItem to={ROUTES.SANDBOX} label="Sandbox" sx={{color: isDark? '#ffffff' : '#121212'}} />}
       </Box>
     </Box>
   );
