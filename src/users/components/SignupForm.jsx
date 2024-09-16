@@ -12,7 +12,8 @@ export default function SignupForm({
   data,
   onInputChange,
   handleChangeCheckBox,
-}) {
+}) 
+{
   return (
     <Form
       onSubmit={onSubmit}

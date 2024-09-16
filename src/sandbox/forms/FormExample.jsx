@@ -15,7 +15,10 @@ export default function FormExample() {
     first: Joi.string().min(2).required(),
     last: Joi.string().min(2).max(7).required(),
   };
-  const handleSubmit = (data) => console.log(data);
+  
+  const handleSubmit = (data) =>{
+    console.log(data)
+  };
 
   const { value, ...rest } = useForm(INITIAL_FORM, schema, handleSubmit);
 

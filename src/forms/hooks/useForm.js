@@ -38,6 +38,15 @@ const useForm = (initialForm, schema, handleSubmit) => {
     [validateProperty]
   );
 
+  const handleChangeCheckBox = useCallback((e) => {
+    let value = e.target.checked;
+    let name = e.target.name;
+    console.log(name, value);
+    setData((prev) => ({ ...prev, [name]: value }));
+  }, []);
+
+  
+
   const validateForm = useCallback(() => {
     const schemaForValidate = Joi.object(schema);
     const { error } = schemaForValidate.validate(data);
@@ -57,6 +66,7 @@ const useForm = (initialForm, schema, handleSubmit) => {
     value,
     onSubmit,
     handleChange,
+    handleChangeCheckBox,
     handleReset,
     validateForm,
     setData,

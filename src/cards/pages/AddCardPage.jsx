@@ -30,7 +30,6 @@ export default function AddCardPage() {
       });
     }
   );
-  const { data, errors } = value;
   
   //useEffect - update the form data to this card data
     useEffect(() => {
@@ -53,7 +52,7 @@ export default function AddCardPage() {
         onSubmit={rest.onSubmit}
         onReset={rest.handleReset}
         errors={value.errors}
-        onFormChange={rest.validateForm}
+        validateForm={rest.validateForm}
         onInputChange={rest.handleChange}
         data={value.data}
       />
