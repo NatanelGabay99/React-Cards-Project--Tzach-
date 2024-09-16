@@ -18,6 +18,7 @@ export default function CardActionBar({
   phone,
 }) {
   const { user } = useCurrentUser();
+  console.log(user);
   const [isDialogOpen, setDialog] = useState(false);
   const [isLiked, setIsLiked] = useState(() => likes.includes(user?._id));
   const navigate = useNavigate();
