@@ -1,13 +1,22 @@
-import Tooltip from "@mui/material/Tooltip";
-import IconButton from "@mui/material/IconButton";
-import Avatar from "@mui/material/Avatar";
+import { Avatar, IconButton, Tooltip } from '@mui/material';
+import { useMenu } from '../menu/MenuProvider';
 
-export default function Logged() {
+const Logged = () => {
+  const setOpen = useMenu();
+  
   return (
-    <Tooltip title="Open settings">
-      <IconButton sx={{ p: 0, display: "inline-flex", marginLeft: 2 }}>
-        <Avatar alt="avatar" src="/images/avatar.png" />
+    <Tooltip title='Open settings'>
+      <IconButton
+      sx={{p: 0, display: 'inline-flex', marginLeft: 2}}
+      onClick={()=> setOpen(true)}>
+        <Avatar alt='avatar' src='/images/avatar.png' />
       </IconButton>
-    </Tooltip>
-  );
-}
+      </Tooltip>
+   
+  )
+};
+
+
+export default Logged;
+
+

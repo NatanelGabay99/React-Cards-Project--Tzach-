@@ -5,10 +5,14 @@ import PageHeader from "../../components/PageHeader";
 import useCards from "../hooks/useCards";
 import CardsFeedback from "../components/CardsFeedback";
 import AddNewCardButton from "../components/card/AddNewCardButton";
+import { useCurrentUser } from "../../users/providers/UserProvider";
 
 export default function CardsPage() {
   const { value, handleGetCards, handleDeleteCard, handleLikeCard } =
     useCards();
+    const { user } = useCurrentUser();
+    console.log(user); 
+
   const { filterCards, error, isLoading } = value;
 
   useEffect(() => {
@@ -33,7 +37,7 @@ export default function CardsPage() {
           handleDelete={handleDelete}
           handleLike={handleLikeCard}
         />
-        <AddNewCardButton />
+        {!user? null : <AddNewCardButton />}
       </Container>
     </div>
   );
