@@ -33,8 +33,8 @@ export default function MyCards() {
     <div>
       <Container sx={{ mt: 2 }}>
         <PageHeader
-          title="Cards"
-          subtitle="On this page you can find all bussines cards from all categories"
+          title="My Cards"
+          subtitle="On this page you can view all your business cards"
         />
         <CardsFeedback
           isLoading={isLoading}

@@ -38,8 +38,8 @@ export default function FavoriteCards() {
     <div>
       <Container sx={{ mt: 2 }}>
         <PageHeader
-          title="Cards"
-          subtitle="On this page you can find all bussines cards from all categories"
+          title="Favorite Cards Page"
+          subtitle="On this page you can view business cards you have liked"
         />
         <CardsFeedback
           isLoading={isLoading}
