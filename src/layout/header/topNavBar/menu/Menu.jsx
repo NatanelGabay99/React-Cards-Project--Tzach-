@@ -5,8 +5,10 @@ import ROUTES from "../../../../routes/routesModel";
 import { useCurrentUser } from "../../../../users/providers/UserProvider";
 import useUsers from "../../../../users/hooks/useUsers";
 import MenuLink from "../../../../routes/components/MenuLink";
+import { useTheme } from "@emotion/react";
 
 const Menu = ({ isOpen, anchorEl, onClose }) => {
+  const { isDark } = useTheme();
   const { user } = useCurrentUser();
   const { handleLogout } = useUsers();
 
@@ -56,14 +58,14 @@ const Menu = ({ isOpen, anchorEl, onClose }) => {
         )}
         {user && (
           <>
-            <MenuLink
-              text="profile"
+            <MenuLink 
+              text="Profile"
               navigateTo={ROUTES.USER_PROFILE}
               onClick={onClose}
             />
-            <MenuLink
-              text="edit account"
-              navigateTo={ROUTES.EDIT_USER}
+            <MenuLink 
+              text="Edit Account"
+              navigateTo={ROUTES.EDIT_USER} 
               onClick={onClose}
             />
             <MenuItem onClick={onLogout}>Logout</MenuItem>

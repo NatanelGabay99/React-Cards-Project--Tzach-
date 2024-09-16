@@ -14,7 +14,6 @@ export default function LeftNavBar() {
   return (
     <Box>
       <LogoIcon />
-
       <Box
         sx={{
           display: { xs: "none", md: "inline-flex" },

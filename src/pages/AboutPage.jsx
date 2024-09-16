@@ -19,7 +19,7 @@ export default function AboutPage() {
 
         <Typography variant="body2" gutterBottom>
         <p>
-          The Card Management System is a web application designed to help users
+          This Card Management System is a web application designed to help users
           organize and manage their cards efficiently. Whether you have a
           collection of business cards, credit cards, or any other type of card,
           this application can help you keep track of them all in one place.
