@@ -9,14 +9,13 @@ import { useTheme } from "../../../../providers/CustomThemeProvider";
 export default function LeftNavBar() {
   const { isDark } = useTheme();
   const { user } = useCurrentUser();
-  console.log(user);
 
   return (
     <Box>
       <LogoIcon />
       <Box
         sx={{
-          display: { xs: "none", md: "inline-flex" },
+          display: { xs: "none", md: "inline-flex", alignItems: "center" },
         }}
       >
         <Logo />
