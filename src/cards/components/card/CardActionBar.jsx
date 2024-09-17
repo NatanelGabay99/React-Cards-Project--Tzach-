@@ -36,7 +36,7 @@ export default function CardActionBar({
     <>
       <CardActions sx={{ paddingTop: 0, justifyContent: "space-between" }}>
         <Box>
-          {user?.isAdmin || user?.id === user_id ? (
+          {user?.isAdmin || user?._id === user_id ? (
             <>
               <IconButton
                 aria-label="Delete Card"

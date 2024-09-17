@@ -37,7 +37,7 @@ export default function CardComponent({
       <CardActionBar
        likes={card.likes}
         id={card._id}
-        user_id={user._id}
+        user_id={card.user_id}
         phone={card.phone}
         handleDelete={handleDelete}
         handleLike={handleLike}
