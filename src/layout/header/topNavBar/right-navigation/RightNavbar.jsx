@@ -6,11 +6,13 @@ import Logged from "./Logged";
 import NotLogged from "./NotLogged";
 import {useTheme} from "../../../../providers/CustomThemeProvider";
 import SearchBar from "./SearchBar";
+import MoreButton from "./MoreButton";
 
 export default function RightNavbar() {
   const { user } = useCurrentUser();
   const { isDark, toggleDarkMode } = useTheme();
   return (
+    <>
     <Box
       sx={{
         display: { xs: "none", md: "inline-flex" },
@@ -21,8 +23,9 @@ export default function RightNavbar() {
       <IconButton sx={{ ml: 1 }} onClick={toggleDarkMode}>
         {isDark ? <LightModeIcon /> : <DarkModeIcon />}
       </IconButton>
-
       {user ? <Logged /> : <NotLogged />}
     </Box>
+    <MoreButton />
+    </>
   );
 }

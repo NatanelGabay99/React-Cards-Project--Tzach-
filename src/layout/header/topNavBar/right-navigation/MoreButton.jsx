@@ -1,4 +1,5 @@
-import { Box, IconButton, MoreVertIcon } from "@mui/material";
+import { Box, IconButton, } from "@mui/material";
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useMenu } from "../menu/MenuProvider";
 
 const MoreButton = () => {

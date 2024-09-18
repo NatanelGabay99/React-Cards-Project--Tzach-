@@ -8,7 +8,7 @@ export default function LogoIcon() {
     <>
       <NavBarLink to={ROUTES.ROOT}>
         <IconButton>
-          <Avatar src="/images/business-card.png" alt="Business card icon" />
+          <Avatar src="/public/images/business-card.png" alt="Business card icon" />
         </IconButton>
       </NavBarLink>
     </>

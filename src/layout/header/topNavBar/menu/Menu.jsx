@@ -34,6 +34,12 @@ const Menu = ({ isOpen, anchorEl, onClose }) => {
     >
       <Box>
         <MenuLink
+          text="cards"
+          navigateTo={ROUTES.CARDS}
+          onClick={onClose}
+          styles={{ display: { xs: "block", md: "none" } }}
+        />
+        <MenuLink
           text="about"
           navigateTo={ROUTES.ABOUT}
           onClick={onClose}
