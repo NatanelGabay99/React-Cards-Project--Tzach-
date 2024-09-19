@@ -1,7 +1,15 @@
-import { Box, Container, Divider, Grid, Typography } from "@mui/material";
+import { Container, Divider, Grid, Typography } from "@mui/material";
 import PageHeader from "../components/PageHeader";
 import { useTheme } from "../providers/CustomThemeProvider";
-import HomeIcon from "@mui/icons-material/Home";
+import HomeIcon from '@mui/icons-material/Home';
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
+import AddCardIcon from '@mui/icons-material/AddCard';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import LoginIcon from '@mui/icons-material/Login';
+import LogoutIcon from '@mui/icons-material/Logout';
+import NavigationIcon from '@mui/icons-material/Navigation';
 
 export default function AboutPage() {
   const { isDark } = useTheme();
@@ -75,8 +83,10 @@ export default function AboutPage() {
           <Typography
             variant="body1"
             gutterBottom
-            sx={{ fontSize: "22px", paddingTop: "30px" }}
+            sx={{ fontSize: "22px", paddingTop: "30px",display: "flex", alignItems: "center" }} 
+
           >
+           <HomeIcon sx={{ fontSize: 40 }} />
             <h3>Home Page:</h3>
           </Typography>
 
@@ -96,8 +106,9 @@ export default function AboutPage() {
           <Typography
             variant="body1"
             gutterBottom
-            sx={{ fontSize: "22px", paddingTop: "30px" }}
+            sx={{ fontSize: "22px", paddingTop: "30px",display: "flex", alignItems: "center" }}
           >
+            <AppRegistrationIcon sx={{ fontSize: 40 }} />
             <h3>Register:</h3>
           </Typography>
 
@@ -118,8 +129,9 @@ export default function AboutPage() {
           <Typography
             variant="body1"
             gutterBottom
-            sx={{ fontSize: "22px", paddingTop: "30px" }}
+            sx={{ fontSize: "22px", paddingTop: "30px",display: "flex", alignItems: "center", gap: "7px" }}
           >
+            <AddCardIcon sx={{ fontSize: 40 }} />
             <h3>Adding a New Card:</h3>
           </Typography>
 
@@ -140,8 +152,9 @@ export default function AboutPage() {
           <Typography
             variant="body1"
             gutterBottom
-            sx={{ fontSize: "22px", paddingTop: "30px" }}
+            sx={{fontSize: "22px", paddingTop: "30px",display: "flex", alignItems: "center" }}
           >
+            <EditIcon sx={{ fontSize: 40 }} />
             <h3>Editing a Card:</h3>
           </Typography>
 
@@ -163,8 +176,9 @@ export default function AboutPage() {
           <Typography
             variant="body1"
             gutterBottom
-            sx={{ fontSize: "22px", paddingTop: "30px" }}
+            sx={{ fontSize: "22px", paddingTop: "30px",display: "flex", alignItems: "center" }}
           >
+            <DeleteIcon sx={{ fontSize: 40 }} />
             <h3>Deleting a Card:</h3>
           </Typography>
 
@@ -184,8 +198,9 @@ export default function AboutPage() {
           <Typography
             variant="body1"
             gutterBottom
-            sx={{ fontSize: "22px", paddingTop: "30px" }}
+            sx={{ fontSize: "22px", paddingTop: "30px",display: "flex", alignItems: "center" }}
           >
+            <FavoriteIcon sx={{ fontSize: 40 }} />
             <h3>Favorites:</h3>
           </Typography>
 
@@ -205,9 +220,11 @@ export default function AboutPage() {
           <Typography
             variant="body1"
             gutterBottom
-            sx={{ fontSize: "22px", paddingTop: "30px" }}
+            sx={{ fontSize: "22px", paddingTop: "30px",display: "flex", alignItems: "center" }}
           >
+            <LoginIcon sx={{ fontSize: 40 }} />
             <h3>Logging In and Out:</h3>
+            <LogoutIcon sx={{ fontSize: 40 }} />
           </Typography>
 
           <Typography
@@ -226,8 +243,9 @@ export default function AboutPage() {
           <Typography
             variant="body1"
             gutterBottom
-            sx={{ fontSize: "22px", paddingTop: "30px" }}
+            sx={{ fontSize: "22px", paddingTop: "30px",display: "flex", alignItems: "center" }}
           >
+            <NavigationIcon sx={{ fontSize: 40 }} />
             <h3>Navigation:</h3>
           </Typography>
 

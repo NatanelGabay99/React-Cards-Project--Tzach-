@@ -15,12 +15,12 @@ export default function Logo() {
             fontWeight: 600,
             fontSize: "40px",
             color: isDark ? "#ededed" : "#121212",
-            display: { xs: "none", md: "inline-flex" },
             animation: "showRight 1s ease forwards",
             "@keyframes showRight": {
               "0%": { transform: "translateX(-100%)" },
               "100%": { transform: "translateX(0)" },
             },
+            display:{ xs: "none", md: "inline-flex", alignItems: "center" },
           }}
         >
           GABAY

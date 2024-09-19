@@ -46,24 +46,39 @@ const Menu = ({ isOpen, anchorEl, onClose }) => {
           styles={{ display: { xs: "block", md: "none" } }}
         />
 
+
         {!user && (
           <>
-            <MenuLink
-              text="login"
-              navigateTo={ROUTES.LOGIN}
-              onClick={onClose}
-              styles={{ display: { xs: "block", md: "none" } }}
-            />
             <MenuLink
               text="signup"
               navigateTo={ROUTES.SIGNUP}
               onClick={onClose}
               styles={{ display: { xs: "block", md: "none" } }}
             />
+            <MenuLink
+              text="login"
+              navigateTo={ROUTES.LOGIN}
+              onClick={onClose}
+              styles={{ display: { xs: "block", md: "none" } }}
+            />
+          </>
+        )}
+        { user && user.isBusiness && (
+          <>
+            <MenuLink 
+              text="My Cards"
+              navigateTo={ROUTES.MY_CARDS} 
+              onClick={onClose}
+            />
           </>
         )}
         {user && (
           <>
+          <MenuLink 
+            text="Favorite Cards"
+            navigateTo={ROUTES.FAV_CARDS}
+            onClick={onClose}
+          />
             <MenuLink 
               text="Profile"
               navigateTo={ROUTES.USER_PROFILE}

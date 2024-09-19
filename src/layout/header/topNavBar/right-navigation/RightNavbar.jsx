@@ -15,7 +15,6 @@ export default function RightNavbar() {
     <>
     <Box
       sx={{
-        display: { xs: "none", md: "inline-flex" },
         alignItems: "center",
       }}
     >
@@ -23,7 +22,11 @@ export default function RightNavbar() {
       <IconButton sx={{ ml: 1 }} onClick={toggleDarkMode}>
         {isDark ? <LightModeIcon /> : <DarkModeIcon />}
       </IconButton>
-      {user ? <Logged /> : <NotLogged />}
+      <Box      sx={{ display: { xs: "none", md: "inline-flex" },}}  
+      >
+              {user ? <Logged /> : <NotLogged />}
+
+      </Box>
     </Box>
     <MoreButton />
     </>
