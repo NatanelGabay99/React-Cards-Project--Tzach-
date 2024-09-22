@@ -38,11 +38,12 @@ export default function FavoriteCards() {
 
   return (
     <div>
-      <Container sx={{color: isDark? '#ffffff' : '#121212', mt: 2 }}>
+      <Container sx={{color: isDark? '#ffffff' : '#121212' }}>
         <PageHeader
           title="Favorite Cards Page"
           subtitle="On this page you can view business cards you have liked"
         />
+
         <CardsFeedback
           isLoading={isLoading}
           error={error}

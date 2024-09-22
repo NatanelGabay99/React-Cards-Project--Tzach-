@@ -2,6 +2,7 @@ import Form from "../../forms/components/Form";
 import Input from "../../forms/components/Input";
 import { Grid, FormControlLabel, Checkbox, Button } from "@mui/material";
 import ROUTES from "../../routes/routesModel";
+import { useTheme } from "../../providers/CustomThemeProvider";
 
 export default function SignupForm({
   onSubmit,
@@ -14,13 +15,14 @@ export default function SignupForm({
   handleChangeCheckBox,
 }) 
 {
+  const { isDark } = useTheme();
   return (
     <Form
       onSubmit={onSubmit}
       onReset={onReset}
       validateForm={validateForm}
       title={title}
-      styles={{ maxWidth: "800px" }}
+      styles={{ maxWidth: "800px", color: isDark? '#ffffff' : '#121212'  }}
       to={ROUTES.CARDS}
     >
       <Input

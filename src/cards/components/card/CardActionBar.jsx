@@ -30,6 +30,8 @@ export default function CardActionBar({
     setIsLiked((prev) => !prev);
   };
 
+  
+
 
   return (
     <>
@@ -64,6 +66,7 @@ export default function CardActionBar({
               <FavoriteIcon color={isLiked ? "error" : "inherit"} />
             </IconButton>
           )}
+         
         </Box>
       </CardActions>
       <CardDeleteDialog

@@ -9,6 +9,7 @@ import Form from "../../forms/components/Form";
 import Input from "../../forms/components/Input";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import useUsers from "../hooks/useUsers";
+import { useTheme } from "../../providers/CustomThemeProvider";
 
 export default function LoginPage() {
   //this pulls the isLoading, error, and handleLogin from the useUsers hook
@@ -22,6 +23,7 @@ export default function LoginPage() {
     const { data, errors } = value;
 
   const { user } = useCurrentUser();
+  const {isDark} = useTheme();
 
   if (user) return <Navigate to={ROUTES.ROOT} replace />;
 
@@ -37,7 +39,7 @@ export default function LoginPage() {
       >
         <Form
           title="Login"
-          styles={{ maxWidth: "450px" }}
+          styles={{ maxWidth: "450px", color: isDark ? "#ffffff" : "#121212" }}
           to={ROUTES.ROOT}
           //this is the onSubmit, onReset, and validateForm for the form
           onSubmit={onSubmit}

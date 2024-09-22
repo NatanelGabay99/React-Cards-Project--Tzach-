@@ -11,7 +11,7 @@ import { useTheme } from "../../providers/CustomThemeProvider";
 
 export default function MyCards() {
   const { isDark } = useTheme();
-  const { value, handleGetMyCards, handleDeleteCard, handleLikeCard } =
+  const { value, handleGetMyCards, handleDeleteCard, handleLikeCard} =
     useCards();
   const { filterCards, error, isLoading } = value;
 
@@ -33,7 +33,7 @@ export default function MyCards() {
 
   return (
     <div>
-      <Container sx={{color: isDark? '#ffffff' : '#121212', mt: 2 }}>
+      <Container sx={{color: isDark? '#ffffff' : '#121212' }}>
         <PageHeader
           title="My Cards"
           subtitle="On this page you can view all your business cards"

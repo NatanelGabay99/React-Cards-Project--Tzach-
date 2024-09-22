@@ -2,6 +2,7 @@ import React from "react";
 import Form from "../../forms/components/Form";
 import Input from "../../forms/components/Input";
 import ROUTES from "../../routes/routesModel";
+import { useTheme } from "../../providers/CustomThemeProvider";
 
 const CardForm = ({
   onSubmit,
@@ -12,13 +13,14 @@ const CardForm = ({
   data,
   title,
 }) => {
+  const { isDark } = useTheme();
   return (
     <Form
       onSubmit={onSubmit}
       onReset={onReset}
       errors={errors}
       validateForm={validateForm}
-      styles={{ maxWidth: "800px" }}
+      styles={{ maxWidth: "800px", color: isDark? '#ffffff' : '#121212'  }}
       title={title}
       to={ROUTES.ROOT}
     >

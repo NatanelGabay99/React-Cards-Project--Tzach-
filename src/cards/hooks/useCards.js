@@ -111,14 +111,23 @@ export default function useCards() {
   const handleLikeCard = useCallback(
     async (cardId) => {
       try {
-        await changeLikeStatus(cardId);
+      const data = await changeLikeStatus(cardId);
+      const isLiked = data.likes.includes(user._id);
+      if (isLiked) {
         snack("success", "This business card has been Liked");
+      }
+      else {
+        snack("success", "This business card has been Unliked");
+      }
       } catch (error) {
         requestStatus(false, error, null);
       }
     },
     [snack]
   );
+
+ 
+
   //handleGetFavCards
   const handleGetFavCards = useCallback(async () => {
     try {

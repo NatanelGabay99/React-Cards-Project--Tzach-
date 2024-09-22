@@ -10,7 +10,8 @@ export default function Logo() {
       <NavBarLink to={ROUTES.ROOT}>
         <Typography
           sx={{
-            marginRight: 2,
+            marginRight: '20px',
+            marginTop: '10px',
             fontFamily: '"Brygada 1918", serif',
             fontWeight: 600,
             fontSize: "40px",
@@ -20,7 +21,7 @@ export default function Logo() {
               "0%": { transform: "translateX(-100%)" },
               "100%": { transform: "translateX(0)" },
             },
-            display:{ xs: "none", md: "inline-flex", alignItems: "center" },
+            display:{ xs: "none", md: "inline-flex"},
           }}
         >
           GABAY

@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Container, Divider, Grid } from "@mui/material";
 import React, { useEffect } from "react";
 import PageHeader from "../../components/PageHeader";
 
@@ -28,11 +28,12 @@ export default function CardsPage() {
   };
   return (
     <div>
-      <Container sx={{ color: isDark ? "#ffffff" : "#121212", mt: 2 }}>
+      <Container sx={{color: isDark ? "#ffffff" : "#121212"}} >
         <PageHeader
           title="Cards"
           subtitle="On this page you can find all bussines cards from all categories"
         />
+
           <CardsFeedback
             isLoading={isLoading}
             error={error}
