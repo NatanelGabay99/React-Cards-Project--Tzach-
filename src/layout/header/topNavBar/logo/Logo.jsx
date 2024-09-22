@@ -10,8 +10,7 @@ export default function Logo() {
       <NavBarLink to={ROUTES.ROOT}>
         <Typography
           sx={{
-            marginRight: '20px',
-            marginTop: '10px',
+            marginRight: '15px',
             fontFamily: '"Brygada 1918", serif',
             fontWeight: 600,
             fontSize: "40px",

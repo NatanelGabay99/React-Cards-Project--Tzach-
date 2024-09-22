@@ -11,7 +11,7 @@ export default function LeftNavBar() {
   const { user } = useCurrentUser();
 
   return (
-    <Box sx={{mt:'10px'}}>
+    <Box>
       <LogoIcon />
       <Box
         sx={{

@@ -6,7 +6,7 @@ export default function NavBarItem({ to, sx, label }) {
   return (
     <NavBarLink to={to} sx={sx}>
       <Button color="inherit">
-        <Typography sx={{fontSize:'20px', fontWeight:'500', mt:'15px'}}>{label}</Typography>
+        <Typography sx={{fontSize:'20px', fontWeight:'500'}}>{label}</Typography>
       </Button>
     </NavBarLink>
   );

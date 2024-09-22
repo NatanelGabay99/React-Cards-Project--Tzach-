@@ -16,6 +16,7 @@ export default function RightNavbar() {
       <Box
         sx={{
           display: "flex",
+          alignItems: "center",
         }}
       >
         <SearchBar sx={{display: 'flex'}} />

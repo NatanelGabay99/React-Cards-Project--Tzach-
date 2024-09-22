@@ -1,6 +1,10 @@
 export const makeFirstLetterCapital = (text) => {
-  const term = text.toLowerCase().trim();
-  return term.charAt(0).toUpperCase() + term.slice(1);
+  return text
+    .toLowerCase()
+    .trim()
+    .split(' ')
+    .map(text => text.charAt(0).toUpperCase() + text.slice(1))
+    .join(' ');
 };
 
 
