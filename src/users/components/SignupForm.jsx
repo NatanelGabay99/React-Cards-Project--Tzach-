@@ -151,7 +151,7 @@ export default function SignupForm({
           onChange={handleChangeCheckBox}
           name="isBusiness"
           control={<Checkbox value={data.isBusiness} color="primary" />}
-          label="Signup as business"
+          label="Signup as Business user"
         />
       </Grid>
     </Form>

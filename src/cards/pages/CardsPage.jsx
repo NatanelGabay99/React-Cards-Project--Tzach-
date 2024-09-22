@@ -28,19 +28,19 @@ export default function CardsPage() {
   };
   return (
     <div>
-      <Container sx={{color: isDark ? "#ffffff" : "#121212"}} >
+      <Container sx={{ color: isDark ? "#ffffff" : "#121212" }}>
         <PageHeader
           title="Cards"
           subtitle="On this page you can find all bussines cards from all categories"
         />
 
-          <CardsFeedback
-            isLoading={isLoading}
-            error={error}
-            cards={filterCards}
-            handleDelete={handleDelete}
-            handleLike={handleLikeCard}
-          />
+        <CardsFeedback
+          isLoading={isLoading}
+          error={error}
+          cards={filterCards}
+          handleDelete={handleDelete}
+          handleLike={handleLikeCard}
+        />
         {!user ? null : <AddNewCardButton />}
       </Container>
     </div>

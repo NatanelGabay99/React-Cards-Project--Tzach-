@@ -1,8 +1,8 @@
 import { Fab } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../../../routes/routesModel";
+import AddCardIcon from '@mui/icons-material/AddCard';
+
 
 export default function AddNewCardButton() {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ export default function AddNewCardButton() {
         navigate(ROUTES.CREATE_CARD);
       }}
     >
-      <AddIcon />
+      <AddCardIcon />
     </Fab>
   );
 }

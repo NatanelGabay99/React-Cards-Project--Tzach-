@@ -9,7 +9,7 @@ export default function NavBar() {
   const {isDark} = useTheme();
   return (
     <MenuProvider>
-      <AppBar position="sticky" sx={{background: isDark? '#121212' : '#576e99', }} elevation={10}>
+      <AppBar position="sticky" sx={{background: isDark? '#151a1e' : '#85a3e0'}} elevation={10}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <LeftNavBar />
           <RightNavBar />

@@ -6,17 +6,19 @@ import RecentActorsIcon from "@mui/icons-material/RecentActors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import StyleIcon from "@mui/icons-material/Style";
 import { useCurrentUser } from "../../users/providers/UserProvider";
+import { useTheme } from "../../providers/CustomThemeProvider";
 
 export default function Footer() {
+  const { isDark } = useTheme();
   const navigate = useNavigate();
   const { user } = useCurrentUser();
   return (
     <>
       <Paper
-        sx={{position: "sticky", bottom: 0, left: 0, right: 0, backgroundColor:'#576e99'}}
+        sx={{position: "sticky", bottom: 0, left: 0, right: 0}}
         elevation={3}
       >
-        <BottomNavigation showLabels>
+        <BottomNavigation showLabels sx={{background: isDark? '#151a1e' : '#85a3e0'}}>
           <BottomNavigationAction
             label="About"
             icon={<InfoIcon />}

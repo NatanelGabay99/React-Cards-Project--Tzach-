@@ -16,7 +16,7 @@ const SearchBar = () => {
     <Box display="inline-flex">
       <FormControl variant="standard">
         <OutlinedInput
-          sx={{ backgroundColor: isDark ? "#333333" : "#e3f2fd" }}
+          sx={{ backgroundColor: isDark ? "#20272c" : "#e0ebeb" }}
           placeholder="Search"
           size="small"
           value={searchParams.get("q") ?? ""}

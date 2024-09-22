@@ -28,7 +28,7 @@ export default function CardDetailsPage() {
   if (error) return <Error errorMessage={error} />;
 
   return (
-    <Container sx={{ color: isDark? '#ffffff' : '#121212', mt: 4 }}>
+    <Container sx={{ color: isDark? '#ffffff' : '#121212' }}>
       <PageHeader
         title="Card Details"
         subtitle="Here you can find detailed information about the card"
