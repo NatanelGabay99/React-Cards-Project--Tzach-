@@ -5,8 +5,10 @@ import { Container, Box, Typography, Avatar, Paper, Grid } from "@mui/material";
 import Spinner from "../../components/Spinner";
 import { Navigate } from "react-router-dom";
 import ROUTES from "../../routes/routesModel";
+import { useTheme } from "../../providers/CustomThemeProvider";
 
 export default function Profile() {
+  const {isDark} = useTheme();
   const { handleGetUser } = useUsers();
   const { user } = useCurrentUser();
   const [userFullData, setUserFullData] = useState(null);
@@ -26,17 +28,17 @@ export default function Profile() {
 
   return (
     <Container maxWidth="md">
-      <Box sx={{ my: 4 }}>
+      <Box>
         <Grid container spacing={2}>
           <Grid item xs={12} md={4}>
             <Avatar
               alt={userFullData.image.alt}
               src={userFullData.image.url}
-              sx={{ width: 200, height: 200 }}
+              sx={{ width: 200, height: 200, mt: 5 }}
             />
           </Grid>
           <Grid item xs={12} md={8}>
-            <Paper elevation={2} sx={{ p: 2 }}>
+            <Paper elevation={2} sx={{ mt: 5, pl:5, pb:3, pt:3 }}>
               <Typography variant="h4" component="div" gutterBottom>
                 {userFullData.name.first} {userFullData.name.middle}{" "}
                 {userFullData.name.last}
