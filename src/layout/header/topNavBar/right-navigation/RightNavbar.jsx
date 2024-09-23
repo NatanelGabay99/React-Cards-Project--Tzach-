@@ -17,13 +17,14 @@ export default function RightNavbar() {
         sx={{
           display: "flex",
           alignItems: "center",
+          pl:'17px'
         }}
       >
-        <SearchBar sx={{display: 'flex'}} />
-        <IconButton sx={{ display:'flex' ,ml: '2px' }} onClick={toggleDarkMode}>
+        <SearchBar />
+        <IconButton onClick={toggleDarkMode}>
           {isDark ? <LightModeIcon /> : <DarkModeIcon />}
         </IconButton>
-        <Box sx={{ display: { xs: "none", md: "inline-flex"} }}>
+        <Box sx={{ display: { xs: "none", md: "inline-flex"}}}>
           {user ? <Logged /> : <NotLogged />}
         </Box>
       </Box>

@@ -9,7 +9,7 @@ export default function Counter() {
 
   const user = useMemo(() => {
     return {
-      firstName: "Tzach",
+      firstName: "Natanel",
       age: age,
     };
   }, [age]);

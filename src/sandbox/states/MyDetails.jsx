@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 export default function MyDetails() {
   const [person, setPerson] = useState({
-    fullName: { firstName: "Tzach", lastName: "Dabush" },
+    fullName: { firstName: "Natanel", lastName: "Gabay" },
     email: "example@gmail.com",
   });
 
