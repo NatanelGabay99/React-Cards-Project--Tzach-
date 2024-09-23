@@ -3,9 +3,6 @@ import { Outlet } from "react-router-dom";
 import NavItem from "../routes/components/NavBarItem";
 
 export default function SandBoxPage() {
-  //   const user = {};
-  //   user.isAdmin = true;
-  //   if (!user || !user.isAdmin) return <Navigate replace to={ROUTES.CARDS} />;
   return (
     <div>
       <AppBar position="sticky" color="transparent">

@@ -12,19 +12,14 @@ import useCards from "../hooks/useCards";
 import cardSchema from "../models/joi-schema/cardSchema";
 
 export default function EditCardPage() {
-  //what do we need in this page
-  //id of the card - useParams
   const { id } = useParams();
-  //handleUpdateCard & handleGetCard & card - useCards
   const {
     handleUpdateCard,
     handleGetCard,
     value: { card },
   } = useCards();
 
-  //user - useUser (provider)
   const { user } = useCurrentUser();
-  //useForm (initialForm,schema,onSubmit)
   const { 
     value, 
     setData, 
@@ -41,7 +36,6 @@ export default function EditCardPage() {
     }
   );
   const { data, errors } = value;
-  //useEffect - update the form data to this card data
   useEffect(() => {
     handleGetCard(id).then((data) => {
       const modelCard = mapCardToModel(data);

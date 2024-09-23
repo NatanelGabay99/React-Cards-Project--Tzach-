@@ -6,6 +6,7 @@ import { useCurrentUser } from "../../../../users/providers/UserProvider";
 import useUsers from "../../../../users/hooks/useUsers";
 import MenuLink from "../../../../routes/components/MenuLink";
 import { useTheme } from "../../../../providers/CustomThemeProvider";
+import { useParams } from "react-router-dom";
 
 const Menu = ({ isOpen, anchorEl, onClose, }) => {
   const { isDark } = useTheme();
@@ -92,7 +93,7 @@ const Menu = ({ isOpen, anchorEl, onClose, }) => {
             <MenuLink 
               text="Edit Account"
               styles={{color: isDark? '#ffffff' : '#121212'}}
-              navigateTo={ROUTES.EDIT_USER} 
+              navigateTo={ROUTES.EDIT_USER}
               onClick={onClose}
 
             />

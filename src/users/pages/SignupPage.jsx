@@ -20,8 +20,8 @@ export default function SignupPage() {
     handleChangeCheckBox,
   } = useForm(initialSignupForm, signupSchema, handleSignup);
   const { data, errors } = value;
-
-
+  
+ 
   const { user } = useCurrentUser();
 
   if (user) return <Navigate to={ROUTES.ROOT} replace />;

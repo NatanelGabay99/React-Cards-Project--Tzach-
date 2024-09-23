@@ -12,12 +12,9 @@ import useUsers from "../hooks/useUsers";
 import { useTheme } from "../../providers/CustomThemeProvider";
 
 export default function LoginPage() {
-  //this pulls the isLoading, error, and handleLogin from the useUsers hook
-  // useUsers is called because it is a custom hook that is used to handle the login
 
   const { isLoading, error, handleLogin } = useUsers();
 
- // this pulls the data, errors, handleChange, handleReset, validateForm, and onSubmit from the useForm hook, and then useForm is called with the initialLoginForm, loginSchema, and handleLogin
   const { value, handleChange, handleReset, validateForm, onSubmit } =
     useForm(initialLoginForm, loginSchema, handleLogin);
     const { data, errors } = value;
@@ -41,7 +38,6 @@ export default function LoginPage() {
           title="Login"
           styles={{ maxWidth: "450px", color: isDark ? "#ffffff" : "#121212" }}
           to={ROUTES.ROOT}
-          //this is the onSubmit, onReset, and validateForm for the form
           onSubmit={onSubmit}
           onReset={handleReset}
           validateForm={validateForm}
@@ -50,7 +46,6 @@ export default function LoginPage() {
             label="email"
             name="email"
             type="email"
-            //this is the error, onChange, and data for the input
             error={errors.email}
             onChange={handleChange}
             data={data}

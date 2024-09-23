@@ -1,6 +1,5 @@
 import axios from "axios";
 
-//const apiUrl = "http://localhost:8181";
 
 const apiUrl = "https://monkfish-app-z9uza.ondigitalocean.app/bcard2";
 

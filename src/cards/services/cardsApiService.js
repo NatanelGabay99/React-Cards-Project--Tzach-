@@ -1,9 +1,5 @@
 import axios from "axios";
 
-
-//const apiUrl = "http://localhost:8181";
-
-
 const apiUrl = "https://monkfish-app-z9uza.ondigitalocean.app/bcard2";
 
 export const getCards = async () => {
@@ -51,22 +47,19 @@ export const createCard = async (card) => {
     return data;
   } catch (error) {
     if (error.response) {
-      // שגיאה שהגיעה מהשרת, עם תגובה מלאה
       console.error("Error response from server:");
-      console.error("Status Code:", error.response.status); // קוד סטטוס HTTP
-      console.error("Status Text:", error.response.statusText); // טקסט הסטטוס
-      console.error("Headers:", error.response.headers); // כותרות התגובה
-      console.error("Data:", error.response.data); // המידע שהשרת שלח
+      console.error("Status Code:", error.response.status);
+      console.error("Status Text:", error.response.statusText); 
+      console.error("Headers:", error.response.headers); 
+      console.error("Data:", error.response.data); 
       return Promise.reject(
         `Error ${error.response.status}: ${error.response.statusText} - ${error.response.data}`
       );
     } else if (error.request) {
-      // השגיאה נגרמה מבקשה שנשלחה אך לא התקבלה תגובה
       console.error("No response received from server:");
       console.error("Request Data:", error.request);
       return Promise.reject("No response received from server.");
     } else {
-      // שגיאה שנגרמה בהגדרת הבקשה עצמה
       console.error("Error setting up request:", error.message);
       return Promise.reject(`Request setup error: ${error.message}`);
     }
