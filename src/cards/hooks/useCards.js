@@ -111,10 +111,10 @@ export default function useCards() {
       const data = await changeLikeStatus(cardId);
       const isLiked = data.likes.includes(user._id);
       if (isLiked) {
-        snack("success", "This business card has been Liked");
+        snack("success", "This business card has been Liked and added to your Favorites");
       }
       else {
-        snack("success", "This business card has been Unliked");
+        snack("success", "This business card has been Unliked and removed from your Favorites");
       }
       } catch (error) {
         requestStatus(false, error, null);
