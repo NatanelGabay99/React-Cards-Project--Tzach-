@@ -51,4 +51,6 @@ Business Users: All the above user features, Create and manage owned business ca
 
 Admin Users: Al registered features, Manage all business cards, view SandBox link in Navbar
 
+In addition, clicking on the Logo's in the right side of the navbar will navigate the user to the cards page from whichever page the user is currently visiting.
+
 **see more detailed instructions @About-Page**

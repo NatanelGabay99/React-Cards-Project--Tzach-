@@ -1,15 +1,15 @@
 import { Container, Divider, Grid, Typography } from "@mui/material";
 import PageHeader from "../components/PageHeader";
 import { useTheme } from "../providers/CustomThemeProvider";
-import HomeIcon from '@mui/icons-material/Home';
-import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
-import AddCardIcon from '@mui/icons-material/AddCard';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import LoginIcon from '@mui/icons-material/Login';
-import LogoutIcon from '@mui/icons-material/Logout';
-import NavigationIcon from '@mui/icons-material/Navigation';
+import HomeIcon from "@mui/icons-material/Home";
+import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
+import AddCardIcon from "@mui/icons-material/AddCard";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import LoginIcon from "@mui/icons-material/Login";
+import LogoutIcon from "@mui/icons-material/Logout";
+import NavigationIcon from "@mui/icons-material/Navigation";
 
 export default function AboutPage() {
   const { isDark } = useTheme();
@@ -17,7 +17,7 @@ export default function AboutPage() {
     <Container sx={{ color: isDark ? "#ffffff" : "#121212" }}>
       <PageHeader
         title="About Page"
-        subtitle="On this page you can find explanations about using the application"
+        subtitle="On this page you can view extended explanations about using the application"
       />
 
       <Grid container spacing={2}>
@@ -37,10 +37,10 @@ export default function AboutPage() {
 
             <p>
               The application allows you to add new cards, edit existing ones,
-              and delete cards that are no longer needed. You can customize each
-              card with specific details such as the card type, name, number,
-              and expiration date. Additionally, you can mark cards as favorites
-              for quick access.
+              and delete cards that are no longer needed or in use. You can
+              customize your own business cards and view them afterwards in the cards page when
+              submiting them. In addition, you can mark cards as
+              favorites for quick access and unmark them.
             </p>
             <p>
               The application features a user-friendly interface that makes it
@@ -51,10 +51,10 @@ export default function AboutPage() {
               application.
             </p>
             <p>
-              To access certain features like managing favorites, you need to be
+              To access certain features like managing 'favorites' and 'my-cards', you need to be
               logged in. Use the login form to enter your credentials. Once
               logged in, you can log out at any time by clicking the "Logout"
-              button in the navigation bar.
+              button in the avatar icon.
             </p>
             <p>
               Whether you have a small or large collection of cards, the Card
@@ -75,7 +75,7 @@ export default function AboutPage() {
               This application is a comprehensive card management system
               designed to help you organize and manage your cards efficiently.
               The application features two main pages: the Home page which is
-              basically the Cards page, and the About Page which demonstartes
+              basically the Cards page, and the About Page which demonstrates
               the user how to interact with the app.
             </p>
           </Typography>
@@ -83,10 +83,14 @@ export default function AboutPage() {
           <Typography
             variant="body1"
             gutterBottom
-            sx={{ fontSize: "22px", paddingTop: "30px",display: "flex", alignItems: "center" }} 
-
+            sx={{
+              fontSize: "22px",
+              paddingTop: "30px",
+              display: "flex",
+              alignItems: "center",
+            }}
           >
-           <HomeIcon sx={{ fontSize: 40 }} />
+            <HomeIcon sx={{ fontSize: 40 }} />
             <h3>Home Page:</h3>
           </Typography>
 
@@ -106,7 +110,12 @@ export default function AboutPage() {
           <Typography
             variant="body1"
             gutterBottom
-            sx={{ fontSize: "22px", paddingTop: "30px",display: "flex", alignItems: "center" }}
+            sx={{
+              fontSize: "22px",
+              paddingTop: "30px",
+              display: "flex",
+              alignItems: "center",
+            }}
           >
             <AppRegistrationIcon sx={{ fontSize: 40 }} />
             <h3>Register:</h3>
@@ -129,7 +138,13 @@ export default function AboutPage() {
           <Typography
             variant="body1"
             gutterBottom
-            sx={{ fontSize: "22px", paddingTop: "30px",display: "flex", alignItems: "center", gap: "7px" }}
+            sx={{
+              fontSize: "22px",
+              paddingTop: "30px",
+              display: "flex",
+              alignItems: "center",
+              gap: "7px",
+            }}
           >
             <AddCardIcon sx={{ fontSize: 40 }} />
             <h3>Adding a New Card:</h3>
@@ -152,7 +167,12 @@ export default function AboutPage() {
           <Typography
             variant="body1"
             gutterBottom
-            sx={{fontSize: "22px", paddingTop: "30px",display: "flex", alignItems: "center" }}
+            sx={{
+              fontSize: "22px",
+              paddingTop: "30px",
+              display: "flex",
+              alignItems: "center",
+            }}
           >
             <EditIcon sx={{ fontSize: 40 }} />
             <h3>Editing a Card:</h3>
@@ -176,7 +196,12 @@ export default function AboutPage() {
           <Typography
             variant="body1"
             gutterBottom
-            sx={{ fontSize: "22px", paddingTop: "30px",display: "flex", alignItems: "center" }}
+            sx={{
+              fontSize: "22px",
+              paddingTop: "30px",
+              display: "flex",
+              alignItems: "center",
+            }}
           >
             <DeleteIcon sx={{ fontSize: 40 }} />
             <h3>Deleting a Card:</h3>
@@ -198,7 +223,12 @@ export default function AboutPage() {
           <Typography
             variant="body1"
             gutterBottom
-            sx={{ fontSize: "22px", paddingTop: "30px",display: "flex", alignItems: "center" }}
+            sx={{
+              fontSize: "22px",
+              paddingTop: "30px",
+              display: "flex",
+              alignItems: "center",
+            }}
           >
             <FavoriteIcon sx={{ fontSize: 40 }} />
             <h3>Favorites:</h3>
@@ -220,7 +250,12 @@ export default function AboutPage() {
           <Typography
             variant="body1"
             gutterBottom
-            sx={{ fontSize: "22px", paddingTop: "30px",display: "flex", alignItems: "center" }}
+            sx={{
+              fontSize: "22px",
+              paddingTop: "30px",
+              display: "flex",
+              alignItems: "center",
+            }}
           >
             <LoginIcon sx={{ fontSize: 40 }} />
             <h3>Logging In and Out:</h3>
@@ -243,7 +278,12 @@ export default function AboutPage() {
           <Typography
             variant="body1"
             gutterBottom
-            sx={{ fontSize: "22px", paddingTop: "30px",display: "flex", alignItems: "center" }}
+            sx={{
+              fontSize: "22px",
+              paddingTop: "30px",
+              display: "flex",
+              alignItems: "center",
+            }}
           >
             <NavigationIcon sx={{ fontSize: 40 }} />
             <h3>Navigation:</h3>
