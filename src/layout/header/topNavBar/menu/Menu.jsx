@@ -6,7 +6,6 @@ import { useCurrentUser } from "../../../../users/providers/UserProvider";
 import useUsers from "../../../../users/hooks/useUsers";
 import MenuLink from "../../../../routes/components/MenuLink";
 import { useTheme } from "../../../../providers/CustomThemeProvider";
-import { useParams } from "react-router-dom";
 
 const Menu = ({ isOpen, anchorEl, onClose, }) => {
   const { isDark } = useTheme();
